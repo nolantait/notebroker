@@ -2,10 +2,15 @@
 
 module Notebroker
   class MDX
+    extend Callable
+    extend Dry::Initializer
+
     InvalidSource = Class.new(Error)
 
+    param :source
+
     # @param String
-    def call(source)
+    def call
       parsed = JSON.parse(source, symbolize_names: true)
       lexed = Lexer.call(parsed[:cells])
       lexed
