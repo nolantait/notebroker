@@ -2,11 +2,15 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in notebroker.gemspec
 gemspec
 
-gem "rake", "~> 13.0"
-
-gem "rspec", "~> 3.0"
-
-gem "rubocop", "~> 1.21"
+group :development, :test do
+  gem "byebug"
+  gem "pry"
+  gem "rspec"
+  gem "rubocop"
+  gem "rubocop-performance"
+  gem "rubocop-rake"
+  gem "rubocop-rspec"
+  gem "solargraph"
+end
