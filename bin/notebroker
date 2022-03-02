@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "notebroker"
+
+Dry::CLI.new(Notebroker::CLI::Commands).call

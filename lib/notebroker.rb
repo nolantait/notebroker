@@ -2,6 +2,7 @@
 
 require "json"
 require "dry-initializer"
+require "dry/cli"
 
 require_relative "notebroker/version"
 require_relative "notebroker/callable"
@@ -10,6 +11,7 @@ require_relative "notebroker/code"
 require_relative "notebroker/markdown"
 require_relative "notebroker/lexer"
 require_relative "notebroker/mdx"
+require_relative "notebroker/cli"
 
 module Notebroker
   def self.to_mdx(source)
