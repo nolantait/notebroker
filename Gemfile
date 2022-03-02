@@ -4,6 +4,8 @@ source "https://rubygems.org"
 
 gemspec
 
+gem "rake"
+
 group :development, :test do
   gem "byebug"
   gem "pry"

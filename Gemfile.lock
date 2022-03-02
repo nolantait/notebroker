@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    notebroker (0.1.0)
+    notebroker (0.1.1)
       dry-cli (~> 0.7.0)
       dry-initializer (~> 3.1.1)
 
@@ -33,6 +33,7 @@ GEM
       method_source (~> 1.0)
     racc (1.6.0)
     rainbow (3.1.1)
+    rake (13.0.6)
     regexp_parser (2.2.1)
     reverse_markdown (2.1.1)
       nokogiri
@@ -98,6 +99,7 @@ DEPENDENCIES
   byebug
   notebroker!
   pry
+  rake
   rspec
   rubocop
   rubocop-performance
