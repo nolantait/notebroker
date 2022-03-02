@@ -151,14 +151,14 @@ This is an example of the input and converted markdown file generated:
 
 ### Output
 
-```markdown
+````markdown
 # Test file 1
 
 This is the first line.
 
 This is the end of the first section
 
-```python
+``python
 import code
 
 def a_function(some_parameter):
@@ -187,7 +187,7 @@ This is the result of a cell
 ----------------------------------------
 Total amount paid will be $251,717.22
 ```
-```
+````
 
 ## Development
 
