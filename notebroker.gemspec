@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Nolan J Tait"]
   spec.email = ["nolanjtait@gmail.com"]
 
-  spec.summary = "Turns python notebooks into mdx"
-  spec.description = "Turns python notebooks into mdx"
+  spec.summary = "A gem for turning notebooks into other formats"
+  spec.description = "A ruby based CLI to turn python notebook ipynb files into other formats"
   spec.homepage = "https://github.com/nolantait/notebroker"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.1.0"

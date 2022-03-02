@@ -1,8 +1,20 @@
 # Notebroker
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/notebroker`. To experiment with that code, run `bin/console` for an interactive prompt.
+Supports turning ipynb python notebooks into the following formats:
 
-TODO: Delete this and the text above, and describe your gem
+- Markdown
+
+This library is in alpha and might not support everything. You can see
+the example file which I will make harder over time at `spec/fixtures`.
+
+Plans are to support more formats like:
+
+- HTML
+- MDX
+
+I wrote this library to make it easier to write blog posts through NextJS
+using notebook code. Instead of dealing with the delicate javascript build
+ecosystem I decided to extract it into a more sane ruby gem.
 
 ## Installation
 
@@ -22,7 +34,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+From your terminal you can run the cli:
+
+```
+notebroker --convert notebooks/my-notebook.ipynb --destination ./
+...
+Converting notebooks/my-notebook.ipynb into markdown...
+Saved markdown file to ./
+```
 
 ## Development
 
