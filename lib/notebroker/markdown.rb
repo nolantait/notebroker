@@ -9,7 +9,6 @@ module Notebroker
 
     param :source
 
-    # @param String
     def call
       parsed = JSON.parse(source, symbolize_names: true)
       result = Lexer.call(parsed[:cells])
