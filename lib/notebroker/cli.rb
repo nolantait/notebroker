@@ -24,8 +24,8 @@ module Notebroker
 
         def call(source:, destination: "./")
           File.write(
-            destination + "converted.mdx",
-            Notebroker::MDX.call(File.read(source))
+            destination + "converted.md",
+            Notebroker.to_markdown(File.read(source))
           )
         end
       end
@@ -33,10 +33,10 @@ module Notebroker
       register "version", Version, aliases: ["v", "-v", "--version"]
       register "convert", Convert, aliases: ["c", "-c", "--convert"]
       before("convert") do |args|
-        puts "Converting #{args.fetch(:source)} into MDX..."
+        puts "Converting #{args.fetch(:source)} into markdown..."
       end
       after("convert") do |args|
-        puts "Saved MDX file to #{args.fetch(:destination, "./")}"
+        puts "Saved markdown file to #{args.fetch(:destination, "./")}"
       end
     end
   end

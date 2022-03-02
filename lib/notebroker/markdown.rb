@@ -2,18 +2,22 @@
 
 module Notebroker
   class Markdown
+    extend Callable
     extend Dry::Initializer
 
-    param :lines
+    InvalidSource = Class.new(Error)
 
-    def to_mdx
-      return unless lines.any?
+    param :source
 
-      if lines.last[-1] == "\n"
-        lines.join
-      else
-        lines.join + "\n"
-      end
+    # @param String
+    def call
+      parsed = JSON.parse(source, symbolize_names: true)
+      result = Lexer.call(parsed[:cells])
+      result
+        .filter_map(&:to_markdown)
+        .join("\n")
+    rescue JSON::ParserError
+      raise InvalidSource
     end
   end
 end

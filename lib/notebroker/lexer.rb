@@ -10,8 +10,8 @@ module Notebroker
     def call
       lines.map do |cell|
         case type = cell[:cell_type]
-          when "markdown" then Markdown.new(cell[:source])
-          when "code" then Code.new(
+          when "markdown" then Cells::Markdown.new(cell[:source])
+          when "code" then Cells::Code.new(
             cell.fetch(:source, []),
             cell.fetch(:outputs, [])
           )
