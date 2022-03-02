@@ -17,10 +17,13 @@ module Notebroker
         desc "Converts a ipynb file into the requested format"
 
         argument :source, required: true, desc: "The source filepath"
-        argument :destination, desc: "The output filepath"
+        option :destination,
+               type: :string,
+               default: "./",
+               desc: "The output filepath"
 
         def call(source:, destination: "./")
-          puts File.write(
+          File.write(
             destination + "converted.mdx",
             Notebroker::MDX.call(File.read(source))
           )
@@ -29,6 +32,12 @@ module Notebroker
 
       register "version", Version, aliases: ["v", "-v", "--version"]
       register "convert", Convert, aliases: ["c", "-c", "--convert"]
+      before("convert") do |args|
+        puts "Converting #{args.fetch(:source)} into MDX..."
+      end
+      after("convert") do |args|
+        puts "Saved MDX file to #{args.fetch(:destination, "./")}"
+      end
     end
   end
 end
